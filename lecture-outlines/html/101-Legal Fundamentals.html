@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>101-Legal Fundamentals.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="legal-fundamentals">Legal fundamentals</h1>
+<h2 id="introduction">Introduction</h2>
+<h3 id="setting">Setting</h3>
+<ul>
+<li>The law is essentially the rules to the game</li>
+<li>Doing business today requires you to know the rules</li>
+<li>The rules can be difficult to find and to interpret</li>
+<li>Business managers can use knowledge of the rules to achieve competitive advantage</li>
+</ul>
+<h3 id="objective">Objective</h3>
+<ul>
+<li>In this lecture, we examine the fundamentals of the law and discuss how to use the rules achieve competitive advantage</li>
+</ul>
+<h2 id="what-is-the-law">What is the law?</h2>
+<h3 id="the-law-provides-a-framework-for-society">The law provides a framework for society</h3>
+<ul>
+<li>Law is the structure on which society hangs</li>
+<li>The law provides stability, predictability, and continuity so that people can be sure of how to order their affairs</li>
+<li>The law is actually made up of two elements
+<ul>
+<li>The rule</li>
+<li>The means to enforce the rul</li>
+</ul>
+</li>
+</ul>
+<h3 id="the-law-governs-relationships">The law governs relationships</h3>
+<ul>
+<li>It governs relationships between the state and individuals</li>
+<li>It governs relationships between individuals</li>
+</ul>
+<h3 id="the-law-creates-duties-obligations-and-rights-that-reflect-accepted-views-of-a-given-society">The law creates duties, obligations, and rights that reflect accepted views of a given society</h3>
+<ul>
+<li>The law represents a body of rules of action or conduct prescribed by controlling authority and having legal binding force</li>
+<li>The law provides a mechanism to resolve disputes arising from duties and rights and allows parties to enforce promises in a court of law</li>
+<li>Law may be set down in written code or take the form of judicial decisions and actions of government agencies</li>
+</ul>
+<h2 id="the-law-can-be-classified-in-different-ways">The law can be classified in different ways</h2>
+<h3 id="categories-of-law">Categories of law</h3>
+<p>[Insert table]</p>
+<h3 id="functions-of-the-law">Functions of the law</h3>
+<ul>
+<li>Law provides for a system of order that
+<ul>
+<li>defines rules of conduct and</li>
+<li>levies punishment for violation of those rules</li>
+</ul>
+</li>
+<li>The law ensures consistency and fairness and to promote equality and justice in society</li>
+</ul>
+<h3 id="in-business-the-law">In business, the law</h3>
+<ul>
+<li>promotes good faith dealing among merchants and consumers</li>
+<li>provides reliability for business planning and commercial transactions</li>
+</ul>
+<h2 id="sources-of-the-law">Sources of the Law</h2>
+<h3 id="there-are-primary-sources-of-the-law">There are primary sources of the law</h3>
+<ul>
+<li>Constitutional law</li>
+<li>Statutory law</li>
+<li>Common law</li>
+<li>Administrative law</li>
+</ul>
+<h3 id="constitutional-law">Constitutional law</h3>
+<ul>
+<li>Constitutional law is the foundation for all other law in the United States</li>
+<li>The Constitution  is the supreme law of the land.</li>
+<li>It functions with other laws to
+<ul>
+<li>(1) establish a structure for the federal and state governments and set rules for amending the constitution;</li>
+<li>(2) grant specific powers for the different branches of government; and</li>
+<li>(3) provide procedural protections for U.S. citizens from wrongful government actions.</li>
+</ul>
+</li>
+</ul>
+<h3 id="statutory-law">Statutory law</h3>
+<ul>
+<li>Statutory law is created by a legislative body
+<ul>
+<li>the U.S. Congress is the exclusive legislative body for the passage of federal law</li>
+</ul>
+</li>
+<li>A bill is a draft or a proposed federal statute that Congress has not yet passed or the executive has not yet approved.</li>
+<li>At the federal level, the president may sign a bill into law or veto it
+<ul>
+<li>Congress can override the veto with two-thirds majority vote</li>
+</ul>
+</li>
+<li>Statutes at local levels are called ordinances
+<ul>
+<li>generally regulate issues such as zoning or impose health and safety regulations</li>
+</ul>
+</li>
+</ul>
+<h3 id="common-law">Common law</h3>
+<ul>
+<li>Common law is the law made by the courts</li>
+<li>Common law is based on a resolution of disputes between parties</li>
+<li>Resolution of the disputes also sets a specific standard for other courts to follow when a similar dispute arises again</li>
+<li>Precedent is when courts apply the law of a previous case to current cases with similar facts</li>
+</ul>
+<h3 id="administrative-law">Administrative law</h3>
+<ul>
+<li>Administrative law is the source of law that authorizes the exercise of authority by the executive branch agencies and independent government agencies</li>
+<li>Federal administrative law is largely authorized by statutes and the Constitution, and rules for applying the law are articulated and carried out by administrative agencies.</li>
+<li>Administrative agencies are empowered to administer the details of federal statutes and have broad powers to impose regulations, make policy, and enforce the law in their designated area of jurisdiction.</li>
+</ul>
+<h2 id="much-of-american-law-is-derived-from-english-legal-doctrines">Much of American law is derived from English legal doctrines</h2>
+<h3 id="stare-decisis">Stare decisis</h3>
+<ul>
+<li>The doctrine of stare decisis is the principle that similar cases with similar facts and issues should have the same judicial outcome</li>
+<li>The doctrine requires all lower courts to follow the case precedent</li>
+<li>Once an appellate court has decided a particular case, the decision becomes a case precedent</li>
+</ul>
+<h3 id="remedies-can-appear-in-different-forms">Remedies can appear in different forms</h3>
+<ul>
+<li>
+<p>The terms law and equity are used to describe the appropriate measure of judicial action intended to compensate an injured party in a civil lawsuit</p>
+<ul>
+<li>These measures are known as remedies.</li>
+</ul>
+</li>
+<li>
+<p>Remedies at law generally take the form of money damages</p>
+</li>
+<li>
+<p>Equitable relief is in a form of relief other than money</p>
+<ul>
+<li>An injunction or specific performance</li>
+</ul>
+</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<h3 id="what-did-we-learn-today">What did we learn today?</h3>
+<ul>
+<li>The law provides a framework for society</li>
+<li>There are primary sources of the law</li>
+<li>Much of American law is derived from English legal doctrines</li>
+</ul>
+
+</body>
+</html>

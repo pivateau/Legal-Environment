@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>104-Dispute resolution ADR.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="dispute-resolution-mediation-and-arbitration">Dispute resolution: Mediation and arbitration</h1>
+<h2 id="introduction">Introduction</h2>
+<h3 id="setting">Setting</h3>
+<ul>
+<li>Disputes often arise in business</li>
+<li>Resolving disputes in the court system can be expensive and time-consuming</li>
+<li>Parties may wish to use private means of resolving disputes</li>
+<li>Alternative dispute resolution methods permit a cost-effective resolution</li>
+</ul>
+<h3 id="objective">Objective</h3>
+<p>In this lecture, we examine alternative dispute resolution methods</p>
+<h2 id="increasingly-business-disputes-are-decided-outside-of-the-court-system">Increasingly, business disputes are decided outside of the court system</h2>
+<ul>
+<li>Historically, disputes were heard in the court system</li>
+<li>Beginning in the 1990s, more and more disputes were shifted into private processes</li>
+</ul>
+<h2 id="there-are-different-forms-of-alternate-dispute-resolution">There are different forms of alternate dispute resolution</h2>
+<ul>
+<li>Negotiation is the simplest and least expensive alternative to litigation</li>
+<li>Arbitration, a formal procedure, binds both parties to the result</li>
+<li>Mediation is an informal nonbinding procedure</li>
+</ul>
+<h2 id="negotiation-has-advantages-and-disadvantages">Negotiation has advantages and disadvantages</h2>
+<h3 id="the-parties-can-negotiate-a-resolution-without-the-use-of-third-parties">The parties can negotiate a resolution without the use of third parties</h3>
+<ul>
+<li>Advantages: Very inexpensive. Completely confidential. Time-saving. The parties are familiar with the issues and the facts.</li>
+<li>Disadvantages: Parties are locked into their position. Compromise might be interpreted as weakness of conviction. Difficult to comprehend other people’s problems.</li>
+</ul>
+<h2 id="mediation-uses-a-neutral-third-party-to-resolve-disputes-in-an-informal-procedure">Mediation uses a neutral third party to resolve disputes in an informal procedure</h2>
+<h3 id="mediation-is-designed-to-facilitate-an-early-resolution-of-the-dispute">Mediation is designed to facilitate an early resolution of the dispute</h3>
+<ul>
+<li>Generally all disputes are now subject to mediation</li>
+<li>The agreement at dispute may provide for mediation</li>
+<li>Courts will always order a dispute to mediation before trial</li>
+</ul>
+<h3 id="mediation-contains-several-advantages">Mediation contains several advantages</h3>
+<ul>
+<li>Mediation is a private, confidential, and inexpensive process</li>
+<li>In a mediation, the parties control their fate</li>
+<li>A mediation agreement may be enforced in a court</li>
+</ul>
+<h3 id="mediation-has-disadvantages">Mediation has disadvantages</h3>
+<ul>
+<li>Mediation relies on each party having a good faith desire to settle the case</li>
+<li>Mediation does not provide an independent means for the discovery of evidence</li>
+<li>Enforcement of a mediation agreement requires court intervention</li>
+<li>Private resolution of disputes prevents the growth of the common law</li>
+</ul>
+<h2 id="arbitration-is-a-formal-means-of-alternate-dispute-resolution">Arbitration is a formal means of alternate dispute resolution</h2>
+<h3 id="arbitration-is-a-technique-for-the-resolution-of-disputes-outside-the-courts">Arbitration is a technique for the resolution of disputes outside the courts</h3>
+<ul>
+<li>The parties to a dispute refer it to arbitration by one or more persons (the “arbitrators”, “arbiters” or “arbitral tribunal”), and agree to be bound by the arbitration decision (the “award”)</li>
+<li>A third party reviews the evidence in the case and imposes a decision that is legally binding on both sides and enforceable in the courts</li>
+<li>There are limited rights of review and appeal of arbitration awards</li>
+<li>Both the agreement to arbitrate and the arbitration award are binding</li>
+</ul>
+<h3 id="arbitration-is-widely-used-in-the-us-for-a-wide-range-of-cases">Arbitration is widely used in the US for a wide range of cases</h3>
+<ul>
+<li>Consumer transactions</li>
+<li>Employment</li>
+<li>Civil rights</li>
+</ul>
+<h3 id="arbitration-is-governed-by-statutes">Arbitration is governed by statutes</h3>
+<ul>
+<li>The Federal Arbitration Act governs most arbitrations</li>
+<li>Each state generally has an applicable arbitration act</li>
+</ul>
+<h3 id="arbitration-resembles-a-court-case">Arbitration resembles a court case</h3>
+<ul>
+<li>The arbitration proceeding is adversarial</li>
+<li>At an arbitration, the parties present evidence and witnesses</li>
+<li>The rules of evidence don't usually apply</li>
+</ul>
+<h3 id="arbitration-is-generally-a-binding-procedure">Arbitration is generally a binding procedure</h3>
+<ul>
+<li>The arbitration is conducted in front of a neutral third party or parties</li>
+<li>There is generally no appeal of an arbitration award</li>
+<li>Case discussion: [Hall Street Associates, LLC v. Mattel, Inc., 128 S.Ct. 1396 (2008)]</li>
+</ul>
+<h2 id="arbitration-has-advantages-and-disadvantages">Arbitration has advantages and disadvantages</h2>
+<h3 id="advantages">Advantages</h3>
+<ul>
+<li>Relatively low cost</li>
+<li>Quick</li>
+<li>May not need an attorney</li>
+<li>Easily accessible</li>
+<li>Arbitrator will be familiar with the context of the dispute</li>
+<li>Certainty because of no jury</li>
+<li>Able to tell your side of the story</li>
+<li>Confidential</li>
+<li>Finality</li>
+</ul>
+<h3 id="disadvantages">Disadvantages</h3>
+<ul>
+<li>Lack of a public forum</li>
+<li>Arbitrator can be repeat visitor</li>
+<li>Unfair procedures may be put in place</li>
+<li>No appeal</li>
+<li>Plaintiff attorneys can file mass arbitration claims</li>
+<li>Prevents the growth of the common law</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<h3 id="what-did-we-learn-in-this-lecture">What did we learn in this lecture?</h3>
+<ul>
+<li>Negotiation provides the most inexpensive and efficient means of dispute resolution</li>
+<li>Mediation uses a neutral third party to resolve disputes in an informal procedure</li>
+<li>Arbitration is a formal means of alternate dispute resolution that binds the parties to the result</li>
+</ul>
+
+</body>
+</html>
