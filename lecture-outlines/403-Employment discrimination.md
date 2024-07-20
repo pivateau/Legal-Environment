@@ -1,12 +1,3 @@
----
-marp: true
-theme: gaia
-backgroundColor: #fff
-headingDivider: 3
-autoscaling: true
-build*lists: true
----
-
 # Employment discrimination
 
 ## Introduction
