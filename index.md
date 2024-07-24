@@ -1,10 +1,9 @@
-# LSB3213 Legal Environment
+# LSB3213 Legal Environment of Business
 
-## Modules
+## Module 1
 
-### Legal fundamentals
-
-* Legal foundations
-* The American judicial system
-* Dispute resolution: Litigation
-* Dispute resolution: ADR
+[Legal fundamentals](<101-Legal Fundamentals.md>)
+[The American judicial system](<102-The American judicial system.md>)
+## Module 2
+## Module 3
+## Module 4
